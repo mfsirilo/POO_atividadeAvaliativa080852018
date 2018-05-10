@@ -23,6 +23,9 @@ public class Empregado extends Pessoa {
     }
 
     public void setSalarioBase(double salarioBase) {
+        if (salarioBase < 0) {
+            throw new IllegalArgumentException("Salario não pode ser menor que Zero");
+        }
         this.salarioBase = salarioBase;
     }
 
@@ -81,6 +84,9 @@ public class Empregado extends Pessoa {
     }
 
     public void calcularSalario(double salarioBase){
+        if(salarioBase<0){
+            throw new IllegalArgumentException("Salario não pode ser menor que Zero");
+        }
         double salarioLiquido =salarioBase - (calcularSalarioInss(salarioBase) + calcularSalarioIr(salarioBase));
         System.out.println(salarioLiquido);
     }
