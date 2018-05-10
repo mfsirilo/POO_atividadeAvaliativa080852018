@@ -79,15 +79,9 @@ public class Empregado extends Pessoa {
         }
         return descontoSalario;
     }
-    
+
     public void calcularSalario(double salarioBase){
         double salarioLiquido =salarioBase - (calcularSalarioInss(salarioBase) + calcularSalarioIr(salarioBase));
-        
+        System.out.println(salarioLiquido);
     }
-    
-    
-    
-
-    
-
 }
